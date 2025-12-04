@@ -1,0 +1,778 @@
+/* --- Variables & Reset --- */
+:root {
+    --bg-color: #1a1a1a; /* Slightly lighter dark for handwritten vibe */
+    --card-bg: #252525;
+    --text-main: #f0f0f0;
+    --text-muted: #dcdcdc;
+    --accent: #d49aff; /* Changed to a soft Purple to match the "Indie" feel */
+    --accent-hover: #b36add;
+    /* Font Variables */
+    --font-heading: 'Amatic SC', cursive;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    /* Optional: Add the dot pattern back if you want that texture */
+    background-image: radial-gradient(#333 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+/* --- Header --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: rgba(26, 26, 26, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    border-bottom: 1px dashed #444; /* Dashed line fits the style better */
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.5rem; /* Larger for Amatic */
+    letter-spacing: 2px;
+}
+
+    .logo span {
+        color: var(--accent);
+    }
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 30px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.8rem; /* Larger navigation text */
+    transition: color 0.3s;
+}
+
+    nav a:hover {
+        color: var(--accent);
+    }
+
+.btn-contact {
+    border: 2px solid var(--accent);
+    padding: 5px 25px;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; /* Sketchy border radius */
+    color: var(--accent) !important;
+}
+
+    .btn-contact:hover {
+        background-color: var(--accent);
+        color: #fff !important;
+    }
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: 6rem; /* Very large heading */
+    line-height: 0.9;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.subtitle {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.intro-text {
+    font-family: var(--font-body);
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    max-width: 550px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-main, .btn-secondary {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 10px 35px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: transform 0.2s;
+    letter-spacing: 1px;
+}
+
+.btn-main {
+    background-color: var(--accent);
+    color: var(--bg-color);
+}
+
+.btn-secondary {
+    border: 2px solid var(--text-main);
+    color: var(--text-main);
+}
+
+    .btn-main:hover, .btn-secondary:hover {
+        transform: scale(1.05);
+    }
+
+/* --- Sections & Headings --- */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    margin-bottom: 40px;
+    border-left: none; /* Removed the cyber line */
+    text-align: center;
+    color: var(--accent);
+}
+
+/* --- Project Grid --- */
+.gallery {
+    padding: 60px 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+.card-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.9);
+    }
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(142, 36, 170, 0.8); /* Purple overlay */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-info {
+    padding: 25px;
+}
+
+    .card-info h3 {
+        margin-bottom: 5px;
+        color: white;
+        font-family: var(--font-heading);
+        font-size: 2.2rem;
+    }
+
+.card-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.tags span {
+    font-size: 0.85rem;
+    background-color: #333;
+    color: var(--accent);
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* --- Experience Timeline --- */
+.experience-section {
+    padding: 80px 50px;
+    background-color: #202020;
+}
+
+.timeline {
+    border-left: 3px dashed #444; /* Dashed line for handwritten feel */
+    margin-left: 20px;
+    padding-left: 40px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -50px;
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    border: 3px solid var(--bg-color);
+}
+
+.timeline-content h3 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 0px;
+}
+
+.timeline-content .company {
+    display: block;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.timeline-content .date {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.timeline-content li::before {
+    content: '-'; /* Replaced > with - */
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* --- About Section --- */
+.about-split {
+    padding: 100px 50px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.skill-category h4 {
+    color: var(--accent);
+    margin-bottom: 5px;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+}
+
+/* --- Footer --- */
+footer {
+    padding: 60px 50px;
+    background-color: #111;
+    text-align: center;
+}
+
+.contact-container h2 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    border: none;
+}
+
+    .social-links a:hover {
+        color: var(--accent);
+        transform: translateY(-3px);
+    }
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    .hero {
+        height: auto;
+        padding: 120px 20px;
+    }
+
+    .about-split {
+        flex-direction: column;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    nav {
+        display: none;
+    }
+}
+
+/* Abstract Tech Circle CSS shape */
+.tech-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    position: relative;
+    background: radial-gradient(circle, #1e1e1e 0%, transparent 70%);
+}
+
+    .tech-circle::after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border-radius: 50%;
+        border: 2px dashed var(--accent);
+        animation: spin 20s linear infinite;
+    }
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* Make the image fit perfectly inside the circle */
+.tech-circle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Makes the photo round */
+    object-fit: cover; /* Prevents stretching */
+    position: relative;
+    z-index: 1; /* Ensures photo sits above the background */
+    padding: 5px; /* Adds a small gap between photo and border */
+}
+
+/* --- Works Page Specific Styles --- */
+
+.page-header {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+/* Container for the list of projects */
+.projects-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Individual Project Row */
+.project-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 100px; /* Space between projects */
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px dashed #444; /* Keeping your theme */
+}
+
+    /* Alternate direction for even rows (Zig-Zag effect) */
+    .project-row.reverse {
+        flex-direction: row-reverse;
+    }
+
+/* Visual Side (Image) */
+.project-visual {
+    flex: 1;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+}
+
+    .project-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+.project-row:hover .project-visual img {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Details Side (Text) */
+.project-details {
+    flex: 1;
+}
+
+    .project-details h2 {
+        font-family: var(--font-heading);
+        font-size: 3rem;
+        color: var(--accent);
+        margin-bottom: 15px;
+    }
+
+.tech-stack {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+    .tech-stack span {
+        font-size: 0.8rem;
+        background-color: #333;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-family: var(--font-body);
+        border: 1px solid var(--accent);
+    }
+
+.project-details p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+/* Active Link Styling for Nav */
+.active-page {
+    color: var(--accent) !important;
+    border-bottom: 2px dashed var(--accent);
+}
+
+/* --- Mobile Responsiveness for Works Page --- */
+@media (max-width: 768px) {
+    .project-row, .project-row.reverse {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .project-visual {
+        width: 100%;
+        height: 200px;
+    }
+
+    .project-details h2 {
+        font-size: 2.5rem;
+    }
+}
+/* --- Vertical Works Layout --- */
+
+.works-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.page-intro {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+    .page-intro h1 {
+        font-family: var(--font-heading);
+        font-size: 5rem;
+        margin-bottom: 10px;
+    }
+
+/* --- The Project Block --- */
+.project-block {
+    margin-bottom: 100px; /* Space between projects */
+    padding-bottom: 50px;
+    border-bottom: 2px dashed #333; /* Divider line */
+}
+
+    /* Last block shouldn't have a border */
+    .project-block:last-child {
+        border-bottom: none;
+    }
+
+.project-header h2 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.tech-stack {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+    .tech-stack span {
+        background: #333;
+        padding: 5px 15px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        color: #fff;
+        border: 1px solid var(--accent);
+    }
+
+.project-desc {
+    max-width: 800px;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* --- The Image Grid --- */
+.image-grid {
+    display: grid;
+    /* This automatically fits 3 images on wide screens, 2 on tablets, 1 on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.img-container {
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #444;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+    /* Update the selector to include 'video' */
+    .img-container img,
+    .img-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures video fills the square without stretching */
+        transition: transform 0.5s ease;
+    }
+
+    /* Hover Effects */
+    .img-container:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+        .img-container:hover img {
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+
+/* Specific Helper for Nav Active State */
+.active-page {
+    color: var(--accent) !important;
+    border-bottom: 2px dashed var(--accent);
+}
+
+/* --- Mobile Fixes --- */
+@media (max-width: 768px) {
+    .page-intro h1 {
+        font-size: 3.5rem;
+    }
+
+    .project-header h2 {
+        font-size: 2.8rem;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+    /* Stack images on phone */
+    .img-container {
+        height: 200px;
+    }
+}
+
+/* --- Modal (Pop-Up) Styling --- */
+
+/* The container (Hidden by default) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000; /* Sit on top of everything */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95); /* Dark background */
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+/* The Content Box */
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    /* Style the Image/Video inside the modal */
+    .modal-content img,
+    .modal-content video {
+        max-width: 100%;
+        max-height: 90vh; /* Keeps it within screen height */
+        border: 2px solid var(--accent);
+        border-radius: 8px;
+        box-shadow: 0 0 30px rgba(142, 36, 170, 0.4);
+    }
+
+/* The Close Button (X) */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    transition: color 0.3s;
+    z-index: 2001;
+}
+
+    .close-modal:hover {
+        color: var(--accent);
+    }
+
+/* Make grid items look clickable */
+/* --- Video Thumbnail Styling --- */
+
+.img-container {
+    position: relative; /* Needed for positioning the play button */
+    cursor: pointer;
+}
+
+/* The Play Button Overlay */
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the icon */
+
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    pointer-events: none; /* Let clicks pass through to the container */
+}
+
+    .play-overlay i {
+        color: #fff;
+        font-size: 20px;
+        margin-left: 4px; /* Slight visual correction for play icon center */
+    }
+
+/* Hover Effect */
+.img-container:hover .play-overlay {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+}
+
+/* Hide play button if the div doesn't have a video (Optional, requires JS or distinct class) */
+.img-container:not([data-video]) .play-overlay {
+    display: none;
+}
+
+/* --- Card Button Styling --- */
+.card-btn {
+    display: block; /* Makes button fill the width */
+    margin-top: 20px;
+    padding: 10px 0;
+    text-align: center;
+    border: 2px dashed var(--accent); /* Matches your handwritten theme */
+    color: var(--accent);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+    .card-btn:hover {
+        background-color: var(--accent);
+        color: #fff;
+        border-style: solid;
+        transform: translateY(-3px);
+    }
+
+/* --- Navigation Scroll Fix --- */
+/* This prevents the sticky header from covering the title when you click the link */
+.project-block {
+    scroll-margin-top: 100px; /* Adjust this number based on your header height */
+}
