@@ -23,7 +23,7 @@
         </nav>
     </header>
 
-   <main class="works-wrapper">
+    <main class="works-wrapper">
 
         <div class="page-intro">
             <h1>PROJECT <span class="accent">SHOWCASE</span></h1>
@@ -46,22 +46,66 @@
             </p>
 
             <div class="image-grid">
-                <div class="img-container" data-video="Assets/Work/Shader/BlackHole.mp4">
-                    <img src="Assets/Work/Shader/BlackHole.jpg" alt="BlackHole">
 
+                <div class="project-card">
+                    <div class="img-container" data-video="Assets/Work/Shader/BlackHole.mp4">
+                        <img src="Assets/Work/Shader/BlackHole.jpg" alt="BlackHole">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Black Hole Shader</h3>
+                        <p class="tech-tags">BLENDER NODES • UNITY • VR EXPERIENCE</p>
+                        <p class="description">A procedural space effect built using Blender nodes and integrated into Unity for a VR "Falling into a Black Hole" simulation.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="img-container" data-video="Assets/Work/Shader/Bottle.mp4">
+                        <img src="Assets/Work/Shader/Bottle.png" alt="Bottle Shader">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Juice Bottle</h3>
+                        <p class="tech-tags">SHADERS • UNITY URP • PBR</p>
+                        <p class="description">A custom shader created in Unity to simulate realistic juice density and liquid refraction inside a glass bottle.</p>
+                    </div>
+                </div>
+
+            <div class="project-card">
+                <div class="img-container" data-video="Assets/Work/Shader/FireWork.mp4">
+                    <img src="Assets/Work/Shader/Firework.png" alt="Bottle Shader">
                     <div class="play-overlay"><i class="fas fa-play"></i></div>
                 </div>
-                <div class="img-container" data-video="Assets/Work/Shader/Bottle.mp4">
-                    <img src="Assets/Work/Shader/Bottle.png" alt="Bottle">
+                <div class="project-info">
+                    <h3>Firework VFX</h3>
+                    <p class="tech-tags">UNITY • PARTICLE SYSTEM • VFX</p>
+                    <p class="description">A stylized firework explosion developed in Unity using the Particle System to create vibrant light bursts, star-shaped sparks, and glowing trails.</p>
+                </div>
+            </div>
 
+            <div class="project-card">
+                <div class="img-container">
+                    <img src="Assets/Work/Shader/DataCenter.png" alt="Pisa Optimization">
+                </div>
+                <div class="project-info">
+                    <h3>Data Center Interior</h3>
+                    <p class="tech-tags">UNITY • BAKED LIGHTING • OPTIMIZATION</p>
+                    <p class="description">Modular interior lighting optimized for real-time performance using baked Global Illumination.</p>
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <div class="img-container">
+                    <img src="Assets/Work/Shader/Church.png" alt="Bottle Shader">
                     <div class="play-overlay"><i class="fas fa-play"></i></div>
                 </div>
-                <div class="img-container">
-                    <img src="Assets/Work/Shader/DataCenter.png" alt="Lighting Setup 2">
+                <div class="project-info">
+                    <h3>Church Interior</h3>
+                    <p class="tech-tags">UNITY • REAL-TIME GI • LIGHT PROBES</p>
+                    <p class="description">Real-time lighting implementation focusing on atmospheric depth and high-fidelity light bounces.</p>
                 </div>
-                <div class="img-container">
-                    <img src="Assets/Work/Shader/Church.png" alt="Material Detail">
-                </div>
+            </div>
+
             </div>
         </section>
 
@@ -76,23 +120,42 @@
             </div>
 
             <p class="project-desc">
-                Environment optimization for mobile and VR platforms. Visuals showing wireframes,
-                LOD transitions, and profiling stats before/after optimization.
+                Environment optimization for mobile and VR using profiling, LODs, and occlusion culling to maximize real-time performance.
             </p>
 
             <div class="image-grid four-col">
-                <div class="img-container">
-                    <img src="Assets/Work/Environment/StoneHenge.png" alt="Wireframe View">
+                <div class="project-card">
+                    <div class="img-container">
+                        <img src="Assets/Work/Environment/StoneHenge.png" alt="StoneHenge">
+                    </div>
+                    <div class="project-info">
+                        <h3>Stonehenge</h3>
+                        <p class="tech-tags">UNITY • PIPELINE OPTIMIZATION • VR</p>
+                        <p class="description">High-fidelity environment optimized for stable performance on VR and mobile platforms through advanced LOD management and draw-call reduction.</p>
+                    </div>
                 </div>
-                <div class="img-container">
-                    <img src="Assets/Work/Environment/Pisa.png" alt="Optimization Graph">
+                <div class="project-card">
+                    <div class="img-container">
+                        <img src="Assets/Work/Environment/Kiifb.png" alt="Kiifb">
+                    </div>
+                    <div class="project-info">
+                        <h3>Metaverse </h3>
+                        <p class="tech-tags">VR • LOD • OCCLUSION CULLING</p>
+                        <p class="description">A massive VR metaverse environment built from scratch for government projects, utilizing LODs and occlusion culling to maintain high performance across a large-scale map.</p>
+                    </div>
                 </div>
-                <div class="img-container">
-                    <img src="Assets/Work/Environment/Kiifb.png" alt="Texture Atlas">
+                <div class="project-card">
+                    <div class="img-container">
+                        <img src="Assets/Work/Environment/Pisa.png" alt="Pisa">
+                    </div>
+                    <div class="project-info">
+                        <h3>Pisa Tower</h3>
+                        <p class="tech-tags">UNITY • LOW POLY</p>
+                        <p class="description">A performance environment designed for mobile VR, utilizing low-poly modeling to maintain high frame rates in large-scale spaces.</p>
+                    </div>
                 </div>
-                <div class="img-container">
-                    <img src="Assets/Work/Environment/DataCenter.png" alt="Final Scene">
-                </div>
+
+
             </div>
         </section>
 
@@ -100,49 +163,68 @@
             <div class="project-header">
                 <h2>03. 3D Modelling & Props</h2>
                 <div class="tech-stack">
-                    <span>Maya</span>
-                    <span>Substance Painter</span>
-                    <span>Hard Surface</span>
+                    <span>Game Ready Assets</span>
+                    <span>Props</span>
+                    <span>Hard Surface Modeling</span>
                 </div>
             </div>
 
             <p class="project-desc">
-                Game-ready assets with clean topology and optimized UV maps.
+                Assets with clean topology and optimized UV maps.
                 Showcasing modular environment pieces and detailed props.
             </p>
 
             <div class="image-grid">
-                <div class="img-container" data-video="Assets/Work/Uncharted.mp4">
-                    <img src="Assets/Work/Uncharted.png" alt="Uncharted">
-
-                    <div class="play-overlay"><i class="fas fa-play"></i></div>
+                <div class="project-card">
+                    <div class="img-container" data-video="Assets/Work/Uncharted.mp4">
+                        <img src="Assets/Work/Uncharted.png" alt="Bottle Shader">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>LIbertalia</h3>
+                    </div>
                 </div>
-                <div class="img-container" data-video="Assets/Work/Van.mp4">
-                    <img src="Assets/Work/Van.png" alt="Van">
-
-                    <div class="play-overlay"><i class="fas fa-play"></i></div>
+                <div class="project-card">
+                    <div class="img-container" data-video="Assets/Work/Van.mp4">
+                        <img src="Assets/Work/Van.png" alt="Bottle Shader">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Breaking Bad - Van</h3>
+                    </div>
                 </div>
-                <div class="img-container" data-video="Assets/Work/Porche.mp4">
-                    <img src="Assets/Work/Porche.png" alt="Porche">
-
-                    <div class="play-overlay"><i class="fas fa-play"></i></div>
+                <div class="project-card">
+                    <div class="img-container" data-video="Assets/Work/Porche.mp4">
+                        <img src="Assets/Work/Porche.png" alt="Bottle Shader">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Porche Wheel</h3>
+                    </div>
                 </div>
-                <div class="img-container">
-                    <img src="Assets/Work/Wheel.png" alt="Texture Maps">
+                
+                <div class="project-card">
+                    <div class="img-container">
+                        <img src="Assets/Work/Captain.png" alt="Captain">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Pirate Captain</h3>  
+                    </div>
                 </div>
-                <div class="img-container">
-                    <img src="Assets/Work/Captain.png" alt="Texture Maps">
-                </div>
-                <div class="img-container" data-video="Assets/Work/FordGT.mp4">
-                    <img src="Assets/Work/FordGT.jpg" alt="FordGT">
-
-                    <div class="play-overlay"><i class="fas fa-play"></i></div>
+                <div class="project-card">
+                    <div class="img-container" data-video="Assets/Work/FordGT.mp4">
+                        <img src="Assets/Work/FordGT.jpg" alt="Bottle Shader">
+                        <div class="play-overlay"><i class="fas fa-play"></i></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>1960s Ford GT40</h3>
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
-
 
     <footer id="contact">
         <div class="contact-container">
@@ -270,6 +352,3 @@
     </script>
 </body>
 </html>
-
-
-
